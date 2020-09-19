@@ -37,9 +37,10 @@ export class AppComponent implements OnInit {
     }
 
   submitClicked() {
-    this.commentService.addComment().subscribe((res) => {
+    this.commentService.addComment(this.commentSectionForm.controls['addComment'].value).subscribe((res) => {
       if (res['code'] = '201 Created') {
         this.showError = false;
+        this.commentSectionForm.controls['addComment'].reset('');
         this.getAllComments();
       } else {
         this.showError = true;
@@ -62,11 +63,8 @@ export class AppComponent implements OnInit {
   resetCommentFeed() {
     this.commentSectionForm.controls['searchComment'].reset('');
     this.commentSectionForm.controls['addComment'].reset('');
-    this.commentService.resetComments().subscribe((res) => {
-      if (res['code'] = '204 No Content') {
-        this.getAllComments();
-      }
-    })
+    this.commentService.resetComments().subscribe();
+    this.getAllComments();
   }
 
 }

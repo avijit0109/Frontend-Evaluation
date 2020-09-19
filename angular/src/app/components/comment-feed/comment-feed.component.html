@@ -1,6 +1,6 @@
 <div class="comment-feed">
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let cmt of allComments"> {{ cmt.id }}
+        <li class="list-group-item" *ngFor="let cmt of allComments"> {{ cmt.text }}
             <a (click)="deleteComment(cmt.id)"><span class="glyphicon glyphicon-trash" style="color:red; float:right;"></span></a>
         </li>
     </ul>
