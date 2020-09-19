@@ -1,0 +1,16 @@
+.app-wrapper__error-msg {
+    border-left: 5px solid #a00;
+    background: #fff2f4;
+    text-align: left;
+    display: flex;
+    width: 100%;
+    margin: 0px 0px -40px 0px;
+  }
+
+  .app-wrapper__error-msg p {
+    color: #a00;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+  }

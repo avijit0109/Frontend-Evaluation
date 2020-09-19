@@ -1,0 +1,22 @@
+<div class="app-wrapper">
+  <div class="app-wrapper__error-msg-section" *ngIf="showError">
+    <div class="app-wrapper__error-msg">
+      <p>{{ errorMsg }}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <form [formGroup]="commentSectionForm">
+    <h2>Search Comment</h2>
+    <input rows="5" placeholder="Enter comment to search" formControlName="searchComment" (keyup)="searchComment()">
+    <h2>Add a comment</h2>
+        <textarea class="form-control" rows="5" formControlName="addComment" placeholder="Your Comment"></textarea>
+        <br/>
+        <button type="button" class="btn btn-success btn-md" (click)='submitClicked()'>Add Comment</button>
+        <button type="button" class="btn btn-primary btn-md pull-right" (click)='resetCommentFeed()'>Reset</button>
+        <br/>
+        <hr/>
+        <h3>Comments</h3>
+        <app-comment-feed *ngIf="showComments" [commentValue] = "showComments" (deleteCliked)="getAllComments()"></app-comment-feed>
+    </form> 
+</div>
+</div>

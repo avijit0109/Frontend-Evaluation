@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Comment Application</title>  
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body ng-app>
+<div class="container">
+    <h1 align="center">Comment Application</h1>
+    <hr/>
+    <app-root></app-root>
+</div>
+<script type="text/javascript">
+function Controller($scope) {
+     $scope.comments = [];
+     $scope.btn_post = function() {
+         if ($scope.cmtName != '') {
+             $scope.comments.push($scope.cmtName);
+             $scope.cmtName = "";
+         }
+     }
+     $scope.post_cmt = function($home) {
+         $scope.comments.splice($home, 1);
+     }
+ }
+</script>
+</body>
+</html>
